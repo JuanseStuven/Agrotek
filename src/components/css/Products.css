@@ -1,0 +1,57 @@
+/* Products.css */
+.products {
+  padding: 50px 0;
+  text-align: center;
+  background: white;
+}
+
+.product-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  display: flex; /* Usar flexbox */
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  justify-content: space-between; /* Espacia los elementos para que el botón esté al final */
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  min-height: 350px; /* Ajusta la altura mínima según sea necesario */
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 15px 0 10px;
+  font-size: 1.5rem;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #666;
+  flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+}
+
+.product-card .btn {
+  background: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
+  align-self: flex-end; /* Alinea el botón al final de la tarjeta */
+}

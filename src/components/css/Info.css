@@ -1,0 +1,57 @@
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa toda la altura de la ventana */
+  background-color: #f4f4f4; /* Color de fondo suave */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-image {
+  width: 100%; /* La imagen abarcará el ancho completo */
+  height: auto; /* Mantener la proporción de la imagen */
+  display: block; /* Asegurarse de que la imagen se comporte como un bloque */
+  margin: 0; /* Sin márgenes */
+  padding: 0; /* Sin padding */
+}
+
+.info-content {
+  background-color: white; /* Fondo blanco para el contenido */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px;
+  max-width: 600px; /* Ancho máximo del contenido */
+  text-align: center; /* Centrar texto */
+}
+
+.info-content h1 {
+  color: #333; /* Color del título */
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.info-content p {
+  color: #666; /* Color del texto */
+  margin-bottom: 15px; /* Espacio debajo del párrafo */
+}
+
+.info-content ul {
+  list-style-type: disc; /* Estilo de lista */
+  padding-left: 20px; /* Espacio a la izquierda */
+  text-align: left; /* Alinear texto a la izquierda */
+}
+
+.product-description {
+  text-align: left; /* Alinear texto a la izquierda */
+  color: #666; /* Color del texto */
+  margin-bottom: 15px; /* Espacio debajo del párrafo */
+}
+
+.image-card,
+.diagram-image {
+  max-width: 100%; /* Asegurarse de que las imágenes no excedan el ancho del contenedor */
+  height: auto; /* Mantener la proporción de la imagen */
+  margin-top: 15px; /* Espacio encima de las imágenes */
+  border-radius: 4px; /* Bordes redondeados para las imágenes */
+}

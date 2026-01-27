@@ -49,6 +49,7 @@
   top: 100px;
   width: 320px;
   flex-shrink: 0;
+  z-index: 10;
 }
 
 .info-nav-container {
@@ -120,6 +121,8 @@
 .info-header {
   text-align: center;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .info-title-image {
@@ -131,6 +134,8 @@
   display: block;
   object-fit: contain;
   filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.1));
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
@@ -390,6 +395,10 @@
     display: none;
   }
 
+  .info-page {
+    padding-top: 80px;
+  }
+
   .info-layout {
     flex-direction: column;
     padding: 20px 16px;
@@ -402,6 +411,10 @@
 
   .info-main-content {
     width: 100%;
+  }
+
+  .info-section-wrapper:first-child {
+    padding-top: 20px;
   }
 
   .section-title {
@@ -448,12 +461,14 @@
 
   .characteristic-item {
     padding: 24px 20px;
-    min-height: 70px;
+    min-height: 90px;
+    align-items: flex-start;
   }
 
   .characteristic-item p {
     font-size: 1.05rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    word-wrap: break-word;
   }
 
   .info-media {
@@ -499,21 +514,28 @@
 
   .benefit-card {
     padding: 36px 20px;
+    min-height: 140px;
+    align-items: flex-start;
   }
 
   .benefit-text {
     font-size: 1.1rem;
-    line-height: 1.8;
+    line-height: 1.9;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .characteristic-item {
     padding: 28px 18px;
-    min-height: 80px;
+    min-height: 100px;
+    align-items: flex-start;
   }
 
   .characteristic-item p {
     font-size: 1.1rem;
-    line-height: 1.7;
+    line-height: 1.8;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .product-description {

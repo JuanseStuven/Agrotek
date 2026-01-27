@@ -396,12 +396,12 @@
   }
 
   .info-page {
-    padding-top: 80px;
+    padding-top: 0;
   }
 
   .info-layout {
     flex-direction: column;
-    padding: 20px 16px;
+    padding: 80px 16px 20px;
   }
 
   /* Ocultar sidebar en móviles */
@@ -414,7 +414,7 @@
   }
 
   .info-section-wrapper:first-child {
-    padding-top: 20px;
+    padding-top: 0;
   }
 
   .section-title {
@@ -431,7 +431,12 @@
   }
 
   .info-title-image {
-    max-height: 120px;
+    max-height: 150px;
+    margin-bottom: 20px;
+  }
+
+  .info-header {
+    margin-bottom: 32px;
   }
 
   .benefits-grid {
@@ -513,38 +518,69 @@
   }
 
   .benefit-card {
-    padding: 36px 20px;
-    min-height: 140px;
+    padding: 40px 24px;
+    min-height: auto;
+    height: auto;
     align-items: flex-start;
+  }
+
+  .benefit-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+    margin-top: 4px;
   }
 
   .benefit-text {
-    font-size: 1.1rem;
-    line-height: 1.9;
+    font-size: 1.15rem;
+    line-height: 2;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    flex: 1;
   }
 
   .characteristic-item {
-    padding: 28px 18px;
-    min-height: 100px;
+    padding: 32px 20px;
+    min-height: auto;
+    height: auto;
     align-items: flex-start;
   }
 
+  .characteristic-bullet {
+    width: 14px;
+    height: 14px;
+    margin-top: 6px;
+  }
+
   .characteristic-item p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.15rem;
+    line-height: 1.9;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    flex: 1;
   }
 
   .product-description {
-    font-size: 1.1rem;
-    line-height: 1.9;
+    font-size: 1.15rem;
+    line-height: 2;
+    margin-bottom: 24px;
   }
 
   .info-subtitle {
-    font-size: 1.15rem;
-    line-height: 1.7;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    padding: 0 8px;
+  }
+
+  .product-narrative h3 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+
+  .section-title-center {
+    font-size: 1.5rem;
+    margin-bottom: 28px;
+    padding: 0 12px;
   }
 }

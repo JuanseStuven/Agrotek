@@ -16,18 +16,30 @@ const Products = ({ producto }) => {
   }, [location]);
   return (
     <div className="product-card" data-aos="fade-up" data-aos-duration="1000">
-      <img src={producto.imageSrc} alt="Producto 1" />
-      <h3>{producto.name}</h3>
-      <ul style={{ listStyleType: "disc", padding: "0 0 0 20px" }}>
-        {producto.characteristics.map((producto, index) => (
-          <li key={index} style={{ textAlign: "left" }}>
-            {producto}
-          </li>
-        ))}
-      </ul>
-      <Link to={`/producto/${producto.name}`} state={{ producto }}>
-        <button className="btn">Más información</button>
-      </Link>
+      <img
+        className="product-card__image"
+        src={producto.imageSrc}
+        alt={producto.name}
+      />
+      <div className="product-card__overlay">
+        <h3 className="product-card__title">{producto.name}</h3>
+        <ul className="product-card__list">
+          {producto.characteristics.map((characteristic, index) => (
+            <li key={index} className="product-card__list-item">
+              {characteristic}
+            </li>
+          ))}
+        </ul>
+      <Link
+        className="product-card__link"
+        to={`/cangilones/agricolas/${encodeURIComponent(
+          producto.slug || producto.name
+        )}`}
+        state={{ producto }}
+      >
+          <button className="btn">Más información</button>
+        </Link>
+      </div>
     </div>
   );
 };

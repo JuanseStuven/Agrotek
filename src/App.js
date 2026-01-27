@@ -8,112 +8,9 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Info from "./components/Info";
+import CangilonesAgricolas from "./components/CangilonesAgricolas";
+import { productos } from "./data/productos";
 import "./App.css";
-
-const productos = [
-  {
-    id: 1,
-    name: "Duratek",
-    head: "Cangilon para elevadores DURATEK ®: Descarga Centrifuga de Alta Velocidad 1m/s a 4,5 m/s",
-    description:
-      "El cangilón DURATEK tiene el diseño original de los primeros cangilones plásticos americanos que han funcionado desde hace 50 años. Esta diseñado con un ángulo de descarga de 45º y puede instalarse muy cerca uno de otro sobre la banda, dando una descarga muy superior a la de otros cangilones. El cangilón DURATEK tiene un diseño más moderno sin las 'orejas' de los lados y con esquinas y labio reforzados para una mayor duración. El espaciado vertical estandar entre cangilones es la proyección +25 mm. Los usos más comunes incluyen MANI, granos, harinas, maíz, trigo, azucar y otras aplicaciones en la agricultura. El cangilón DURATEK tiene el diseño más versatil que se desempeña bien en una amplia gama de velocidades y aplicaciones.",
-    characteristics: [
-      "Livianos",
-      "Memoria de forma",
-      "Descarga más limpia",
-      "Diseño más moderno, refuerzos en labio y esquinas",
-      "No corrosivo, no provoca chispas",
-    ],
-    benefits: [
-      "Incrementa la capacidad del elevador",
-      "Reduce el mantenimiento del elevador",
-      "Extiende la vida útil del cangilon",
-      "Disminuye el tiempo de interrupción por mantenimiento",
-      "Resiste enganches",
-    ],
-    imageSrc: "/images/duratek.jpg",
-    imageSrc2: "/images/duratek2.jpg",
-    diagramImgSrc: "/images/duratek_diagram.gif",
-  },
-  {
-    id: 2,
-    name: "Eurotek",
-    head: "Cangilon para elevadores EUROTEK ®: Descarga Centrifuga de Alta Velocidad 1m/s a 4,5 m/s",
-    description:
-      "El cangilón para elevadores EUROTEK ha sido diseñado para exeder el desempeño del promedio de los cangilones de este tipo disponibles. Este cangilón esta fabricado con paredes más gruesas y el labio frontal con un gran refuerzo para aumentar la vida útil del cangilón y reducir las fallas por roturas. Su diseño de perfil bajo profundo, hace que se instalen menos cangilones por metro lineal de banda que los disponibles en mercado de este diseño de cangilón, dando mayor capacidad, por lo tanto más económico. Los usos más comunes incluyen granos, fertilizantes, pellets, harinas, maíz, trigo, soja, azucar, arroz, entre otras aplicaciones. El cangilón EUROTEK es solo superado en resistencia y duración por el Agrotek TT Fabricamos el mejor cangilón de diseño americano ahora también EUROTEK.",
-    characteristics: [
-      "Esquinas más gruesas",
-      "Más capacidad",
-      "Descarga más limpia",
-      "Alto impacto, resistente a la abrasión",
-      "No corrosivo, no provoca chispas",
-    ],
-    benefits: [
-      "Incrementa la capacidad del elevador",
-      "Reduce el mantenimiento del elevador",
-      "Extiende la vida útil del cangilón",
-      "Disminuye el tiempo de interrupción por mantenimiento",
-      "Resistente a la corrosión.",
-    ],
-    //price en algun momento?
-    imageSrc: "/images/eurotek.jpg",
-    imageSrc2: "/images/eurotek2.jpg",
-    diagramImgSrc: "/images/eurotek_diagram.gif",
-  },
-  {
-    id: 3,
-    name: "Tiger Tek",
-    head: "Cangilon para elevadores TT ®: Descarga Centrifuga de Alta Velocidad 1m/s a 4,5 m/s",
-    description:
-      "El cangilón para elevadores TT ha sido tecnológicamente diseñado para incrementar la vida del cangilón y reducir roturas, transportar mas producto a mayor velocidad, con el menor tiempo de interrupción por mantenimiento y a costos mínimos de conservación. El labio fuertemente reforzado, las esquinas y respaldos mas gruesos extienden la vida útil del cangilón, haciendo del TT el mejor cangilón del mercado. El espaciado vertical estandar entre cangilones es la proyección +50 mm; dependiendo del material transportado y la velocidad de la banda, menores o mayores distan cias pueden ser usadas. Los usos más comunes incluyen granos, fertilizantes, pellets, harinas, maíz, trigo, soja,azucar, arroz y otras aplicaciones en la agricultura e industria liviana.",
-    characteristics: [
-      "Esquinas más gruesas",
-      "Paredes más gruesas, labio frontal más grueso para excavar",
-      "Más capacidad",
-      "Descarga más limpia",
-      "Alto impacto, resistente a la abrasión",
-      "No corrosivo, no provoca chispas",
-    ],
-    benefits: [
-      "Incrementa la capacidad del elevador",
-      "Reduce el mantenimiento del elevador",
-      "Extiende la vida útil del cangilón",
-      "Disminuye el tiempo de interrupción por mantenimiento",
-      "Resistente a la corrosión, no produce chispas",
-      "Muy resistente a enganches",
-    ],
-    //price en algun momento?
-    imageSrc: "/images/tiger.jpg",
-    imageSrc2: "/images/tiger2.jpg",
-    diagramImgSrc: "/images/tiger_diagram.gif",
-  },
-  {
-    id: 4,
-    name: "HT-MAX",
-    head: "Cangilon para elevadores HD-MAX ®: Descarga Centrifuga de Alta Velocidad 1m/s a 4,5 m/s",
-    description:
-      "El cangilón para elevadores HD-MAX ha sido diseñado para exeder el desempeño del promedio de los cangilones disponibles. Este cangilón esta fabricado con paredes más gruesas y el labio frontal reforzado para aumentar la vida útil del cangilón y reducir las fallas por roturas. El espaciado vertical estandar entre cangilones en la banda es la proyección + 50 mm; dependiendo del material transportado y la velocidad de la banda, menores o mayores distancias pueden ser usadas. Los usos más comunes incluyen granos, fertilizantes, pellets, harinas, maíz, trigo, soja, azucar, arroz entre otras aplicaciones.",
-    characteristics: [
-      "Paredes más gruesas, labio frontal más grueso para excavar",
-      "Más capacidad",
-      "Descarga más limpia",
-      "Alto impacto, resistente a la abrasión",
-      "No corrosivo, no provoca chispas",
-    ],
-    benefits: [
-      "Incrementa la capacidad del elevador",
-      "Reduce el mantenimiento del elevador",
-      "Extiende la vida útil del cangilón",
-      "Disminuye el tiempo de interrupción por mantenimiento",
-      "Resistente a la corrosión, no produce chispas",
-      "Disminuye el tiempo de interrupción por mantenimiento",
-    ],
-    //price en algun momento?
-    imageSrc: "/images/ht-max.jpg",
-    imageSrc2: "/images/ht-max2.jpg",
-    diagramImgSrc: "/images/htmax_diagram.gif",
-  },
-];
 
 function App() {
   return (
@@ -130,7 +27,7 @@ function App() {
                   <h2>Nuestros Productos</h2>
                   <div className="product-grid">
                     {productos.map((producto) => (
-                      <Products producto={producto} />
+                      <Products key={producto.id} producto={producto} />
                     ))}
                   </div>
                 </div>
@@ -142,6 +39,11 @@ function App() {
             </div>
           }
         />
+        <Route
+          path="/cangilones/agricolas"
+          element={<CangilonesAgricolas productos={productos} />}
+        />
+        <Route path="/cangilones/agricolas/:name" element={<Info />} />
         <Route path="/producto/:name" element={<Info />} />
       </Routes>
     </Router>

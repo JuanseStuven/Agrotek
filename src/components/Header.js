@@ -37,8 +37,34 @@ const Header = () => {
             <li>
               <Link to="/#home">Inicio</Link>
             </li>
-            <li>
-              <Link to="/#products">Productos</Link>
+            <li className="dropdown">
+              <button className="dropdown-toggle" type="button">
+                Productos
+              </button>
+              <ul className="dropdown-menu">
+                <li className="dropdown dropdown-submenu">
+                  <button className="dropdown-toggle" type="button">
+                    Cangilones
+                  </button>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link to="/cangilones/agricolas">Agrícolas</Link>
+                    </li>
+                    <li>
+                      <Link to="/#products">Industriales</Link>
+                    </li>
+                    <li>
+                      <Link to="/#products">Para Maní</Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link to="/#products">Rodillos</Link>
+                </li>
+                <li>
+                  <Link to="/#products">Avicultura</Link>
+                </li>
+              </ul>
             </li>
             <li>
               <Link to="/#about">Nosotros</Link>

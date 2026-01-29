@@ -5,23 +5,32 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const [isFixed, setIsFixed] = useState(false);
-
   const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setIsFixed(true);
-    } else {
-      setIsFixed(false);
+    // Detectar si seguimos en el Hero o ya salimos
+    const heroSection = document.querySelector('.hero');
+    if (heroSection) {
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      const scrollPosition = window.scrollY;
+      
+      // Si estamos dentro del Hero, transparente; si salimos, sólido
+      if (scrollPosition < heroBottom - 100) {
+        setIsTransparent(true);
+      } else {
+        setIsTransparent(false);
+      }
     }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    // Ejecutar una vez al montar para establecer el estado inicial
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -30,7 +39,10 @@ const Header = () => {
 
   return (
     <header>
-      <div className={classNames("header-container", { fixed: isFixed })}>
+      <div className={classNames("header-container", { 
+        transparent: isTransparent,
+        solid: !isTransparent 
+      })}>
         <img src="/images/logo.png" alt="Agrotek Logo" className="logo" />
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
           <ul>

@@ -220,38 +220,62 @@ header {
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {
+  .header-container {
+    padding: 12px 15px;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .logo {
+    height: 45px;
+    margin-right: 0;
+  }
+
   .hamburger {
-    display: flex; /* Mostrar el ícono en móviles */
+    display: flex;
+    margin-left: 0;
+    padding: 5px;
   }
 
   .nav {
     position: absolute;
-    top: 60px; /* Ajusta según la altura del header */
+    top: 65px;
+    left: 0;
     right: 0;
-    background: #333; /* Fondo sólido para el menú móvil */
-    width: 100%;
+    background: #333;
+    width: 100vw;
+    margin-left: calc(-15px);
     height: 0;
     overflow: hidden;
     transition: height 0.3s ease;
     z-index: 9999;
+    padding: 0;
+    flex: none;
   }
 
   .nav.open {
     height: auto;
     max-height: 500px;
-    z-index: 9999;
-  }
-
-  /* Forzar fondo sólido cuando el menú está abierto */
-  .header-container.transparent + .nav.open,
-  .nav.open {
-    background: #333;
   }
 
   .nav > ul {
     flex-direction: column;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 15px;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .nav > ul > li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav > ul > li > a,
+  .dropdown-toggle {
+    font-size: 1rem;
+    display: block;
+    width: 100%;
   }
 
   .dropdown-menu {
@@ -261,11 +285,21 @@ header {
     padding: 8px 0;
     min-width: unset;
     display: none;
+    margin: 0;
+    width: 100%;
   }
 
-  .dropdown-menu a {
-    padding: 8px 0;
+  .dropdown-menu li {
+    margin: 0;
+    width: 100%;
+  }
+
+  .dropdown-menu a,
+  .dropdown-menu .dropdown-toggle {
+    padding: 8px 15px;
     text-align: center;
+    margin: 2px 0;
+    width: 100%;
   }
 
   .dropdown:hover > .dropdown-menu,
@@ -279,5 +313,13 @@ header {
 
   .dropdown-submenu > .dropdown-menu::before {
     display: none;
+  }
+
+  /* Subrayar solo los elementos dentro del menú de Cangilones */
+  .dropdown-submenu .dropdown-menu a {
+    text-decoration: underline;
+    text-decoration-color: #4caf50;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
   }
 }

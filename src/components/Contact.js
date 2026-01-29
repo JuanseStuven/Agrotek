@@ -72,7 +72,7 @@ const Contact = () => {
         data-aos-duration="1500"
       >
         <div className="container">
-          <h2>Contactenos</h2>
+          <h2>Contactanos</h2>
           <form onSubmit={handleSubmit}>
             <input
               type="text"

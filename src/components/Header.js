@@ -11,6 +11,14 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLinkClick = () => {
+    toggleMenu();
+    // Pequeño delay para asegurar que la navegación se complete antes del scroll
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }, 100);
+  };
+
   const handleScroll = () => {
     // Detectar si seguimos en el Hero o ya salimos
     const heroSection = document.querySelector('.hero');
@@ -47,7 +55,7 @@ const Header = () => {
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <Link to="/#home">Inicio</Link>
+              <Link to="/#home" onClick={toggleMenu}>Inicio</Link>
             </li>
             <li className="dropdown">
               <button className="dropdown-toggle" type="button">
@@ -60,29 +68,29 @@ const Header = () => {
                   </button>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link to="/cangilones/agricolas">Agrícolas</Link>
+                      <Link to="/cangilones/agricolas" onClick={handleLinkClick}>Agrícolas</Link>
                     </li>
                     <li>
-                      <Link to="/#products">Industriales</Link>
+                      <Link to="/#products" onClick={handleLinkClick}>Industriales</Link>
                     </li>
                     <li>
-                      <Link to="/#products">Para Maní</Link>
+                      <Link to="/#products" onClick={handleLinkClick}>Para Maní</Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <Link to="/#products">Rodillos</Link>
+                  <Link to="/#products" onClick={toggleMenu}>Rodillos</Link>
                 </li>
                 <li>
-                  <Link to="/#products">Avicultura</Link>
+                  <Link to="/#products" onClick={toggleMenu}>Avicultura</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <Link to="/#about">Nosotros</Link>
+              <Link to="/#about" onClick={toggleMenu}>Nosotros</Link>
             </li>
             <li>
-              <Link to="/#contact">Contacto</Link>
+              <Link to="/#contact" onClick={toggleMenu}>Contacto</Link>
             </li>
           </ul>
         </nav>

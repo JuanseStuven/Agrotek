@@ -315,11 +315,13 @@ header {
     display: none;
   }
 
-  /* Subrayar solo los elementos dentro del menú de Cangilones */
-  .dropdown-submenu .dropdown-menu a {
-    text-decoration: underline;
-    text-decoration-color: #4caf50;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
+  /* Ocultar elementos que están después del dropdown cuando tiene hover */
+  .nav.open .dropdown:hover ~ li {
+    display: none;
+  }
+
+  /* Ocultar elementos que están después del submenu cuando tiene hover */
+  .dropdown-menu .dropdown-submenu:hover ~ li {
+    display: none;
   }
 }

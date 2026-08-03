@@ -1,14 +1,62 @@
 import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import "./css/Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTransparent, setIsTransparent] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 80; // Altura aproximada del header
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleSectionClick = (e, sectionId) => {
+    e.preventDefault();
+    toggleMenu();
+
+    // Si ya estamos en la página principal
+    if (location.pathname === '/') {
+      scrollToSection(sectionId);
+    } else {
+      // Si estamos en otra página, navegar a la principal y luego hacer scroll
+      navigate('/');
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    }
+  };
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    toggleMenu();
+
+    // Si ya estamos en la página principal, hacer scroll al top
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Si estamos en otra página, navegar a la principal
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
   };
 
   const handleLinkClick = () => {
@@ -45,6 +93,28 @@ const Header = () => {
     };
   }, []);
 
+  // Cerrar menú al hacer clic fuera del header
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const header = document.querySelector('header');
+      // Si el menú está abierto y el clic fue fuera del header, cerrarlo
+      if (isMenuOpen && header && !header.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Solo agregar el listener si el menú está abierto
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
     <header>
       <div className={classNames("header-container", { 
@@ -55,7 +125,7 @@ const Header = () => {
         <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <Link to="/#home" onClick={toggleMenu}>Inicio</Link>
+              <a href="#home" onClick={handleHomeClick}>Inicio</a>
             </li>
             <li className="dropdown">
               <button className="dropdown-toggle" type="button">
@@ -79,7 +149,7 @@ const Header = () => {
                   </ul>
                 </li>
                 <li>
-                  <Link to="/#products" onClick={toggleMenu}>Rodillos</Link>
+                  <Link to="/rodillos" onClick={handleLinkClick}>Rodillos</Link>
                 </li>
                 <li>
                   <Link to="/#products" onClick={toggleMenu}>Avicultura</Link>
@@ -87,10 +157,10 @@ const Header = () => {
               </ul>
             </li>
             <li>
-              <Link to="/#about" onClick={toggleMenu}>Nosotros</Link>
+              <a href="#about" onClick={(e) => handleSectionClick(e, 'about')}>Nosotros</a>
             </li>
             <li>
-              <Link to="/#contact" onClick={toggleMenu}>Contacto</Link>
+              <a href="#contact" onClick={(e) => handleSectionClick(e, 'contact')}>Contacto</a>
             </li>
           </ul>
         </nav>

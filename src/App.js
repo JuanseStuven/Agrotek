@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Products from "./components/Products";
-import About from "./components/About";
+import AboutAgrotek from "./components/AboutAgrotek";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Info from "./components/Info";
 import CangilonesAgricolas from "./components/CangilonesAgricolas";
+import Rodillos from "./components/Rodillos";
 import { productos } from "./data/productos";
 import "./App.css";
 
@@ -22,17 +23,7 @@ function App() {
             <div className="App">
               <Header />
               <Hero />
-              <section id="products" className="products">
-                <div className="container">
-                  <h2>Nuestros Productos</h2>
-                  <div className="product-grid">
-                    {productos.map((producto) => (
-                      <Products key={producto.id} producto={producto} />
-                    ))}
-                  </div>
-                </div>
-              </section>
-              <About />
+              <AboutAgrotek />
               <WhatsAppButton />
               <Contact />
               <Footer />
@@ -45,6 +36,7 @@ function App() {
         />
         <Route path="/cangilones/agricolas/:name" element={<Info />} />
         <Route path="/producto/:name" element={<Info />} />
+        <Route path="/rodillos" element={<Rodillos />} />
       </Routes>
     </Router>
   );

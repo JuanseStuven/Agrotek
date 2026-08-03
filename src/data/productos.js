@@ -20,10 +20,10 @@ export const productos = [
       "Disminuye el tiempo de interrupción por mantenimiento",
       "Resiste enganches",
     ],
-    imageSrc: "/images/duratek.jpg",
-    imageSrc2: "/images/duratek2.jpg",
-    diagramImgSrc: "/images/duratek_diagram.gif",
-    logoSrc: "/images/duratek_logo.jpeg",
+    imageSrc: "/images/cangilones/duratek.jpg",
+    imageSrc2: "/images/cangilones/duratek2.jpg",
+    diagramImgSrc: "/images/cangilones/duratek_diagram.gif",
+    logoSrc: "/images/cangilones/duratek_logo.jpeg",
   },
   {
     id: 2,
@@ -47,10 +47,10 @@ export const productos = [
       "Resistente a la corrosión.",
     ],
     //price en algun momento?
-    imageSrc: "/images/eurotek.jpg",
-    imageSrc2: "/images/eurotek2.jpg",
-    diagramImgSrc: "/images/eurotek_diagram.gif",
-    logoSrc: "/images/eurotek_logo.jpeg",
+    imageSrc: "/images/cangilones/eurotek.jpg",
+    imageSrc2: "/images/cangilones/eurotek2.jpg",
+    diagramImgSrc: "/images/cangilones/eurotek_diagram.gif",
+    logoSrc: "/images/cangilones/eurotek_logo.jpeg",
   },
   {
     id: 3,
@@ -76,10 +76,10 @@ export const productos = [
       "Muy resistente a enganches",
     ],
     //price en algun momento?
-    imageSrc: "/images/tiger.jpg",
-    imageSrc2: "/images/tiger2.jpg",
-    diagramImgSrc: "/images/tiger_diagram.gif",
-    logoSrc: "/images/tiger_logo.jpeg",
+    imageSrc: "/images/cangilones/tiger.jpg",
+    imageSrc2: "/images/cangilones/tiger2.jpg",
+    diagramImgSrc: "/images/cangilones/tiger_diagram.gif",
+    logoSrc: "/images/cangilones/tiger_logo.jpeg",
   },
   {
     id: 4,
@@ -104,9 +104,9 @@ export const productos = [
       "Disminuye el tiempo de interrupción por mantenimiento",
     ],
     //price en algun momento?
-    imageSrc: "/images/ht-max.jpg",
-    imageSrc2: "/images/ht-max2.jpg",
-    diagramImgSrc: "/images/htmax_diagram.gif",
-    logoSrc: "/images/htmax_logo.jpeg",
+    imageSrc: "/images/cangilones/ht-max.jpg",
+    imageSrc2: "/images/cangilones/ht-max2.jpg",
+    diagramImgSrc: "/images/cangilones/htmax_diagram.gif",
+    logoSrc: "/images/cangilones/htmax_logo.jpeg",
   },
 ];

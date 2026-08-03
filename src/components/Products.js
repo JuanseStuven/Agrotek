@@ -23,6 +23,11 @@ const Products = ({ producto }) => {
       />
       <div className="product-card__overlay">
         <h3 className="product-card__title">{producto.name}</h3>
+        {producto.variants && producto.variants.length > 1 && (
+          <span className="product-card__badge">
+            {producto.variants.length} modelos disponibles
+          </span>
+        )}
         <ul className="product-card__list">
           {producto.characteristics.map((characteristic, index) => (
             <li key={index} className="product-card__list-item">

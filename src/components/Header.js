@@ -157,6 +157,9 @@ const Header = () => {
               </ul>
             </li>
             <li>
+              <Link to="/informacion-tecnica" onClick={handleLinkClick}>Información Técnica</Link>
+            </li>
+            <li>
               <a href="#about" onClick={(e) => handleSectionClick(e, 'about')}>Nosotros</a>
             </li>
             <li>

@@ -10,6 +10,7 @@ import WhatsAppButton from "./components/WhatsAppButton";
 import Info from "./components/Info";
 import CangilonesAgricolas from "./components/CangilonesAgricolas";
 import Rodillos from "./components/Rodillos";
+import InformacionTecnica from "./components/InformacionTecnica";
 import { productos } from "./data/productos";
 import "./App.css";
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/cangilones/agricolas/:name" element={<Info />} />
         <Route path="/producto/:name" element={<Info />} />
         <Route path="/rodillos" element={<Rodillos />} />
+        <Route path="/informacion-tecnica" element={<InformacionTecnica />} />
       </Routes>
     </Router>
   );

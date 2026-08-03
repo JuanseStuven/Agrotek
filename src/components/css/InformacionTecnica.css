@@ -1,0 +1,410 @@
+/* InformacionTecnica.css */
+:root {
+  --tec-green: #4caf50;
+  --tec-green-dark: #388e3c;
+  --tec-dark: #0f172a;
+  --tec-dark-2: #1e293b;
+  --tec-gray: #475569;
+  --tec-gray-light: #f1f5f9;
+}
+
+/* ── Hero ── */
+.tecnica-hero {
+  position: relative;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  min-height: 46vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  overflow: hidden;
+}
+
+.tecnica-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(76, 175, 80, 0.12) 0%, transparent 40%);
+}
+
+.tecnica-hero__content {
+  position: relative;
+  z-index: 1;
+  padding: 60px 20px;
+  color: white;
+}
+
+.tecnica-hero__badge {
+  display: inline-block;
+  background: rgba(76, 175, 80, 0.25);
+  border: 1px solid var(--tec-green);
+  color: #a7f3a0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.tecnica-hero__content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.tecnica-hero__content p {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+/* ── Sections ── */
+.tecnica-section {
+  padding: 80px 20px;
+}
+
+.tecnica-section.white-bg {
+  background: #ffffff;
+}
+
+.tecnica-section.gray-bg {
+  background: var(--tec-gray-light);
+}
+
+.tecnica-section.dark-bg {
+  background: linear-gradient(135deg, var(--tec-dark) 0%, var(--tec-dark-2) 100%);
+}
+
+.section-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--tec-dark);
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: -0.4px;
+}
+
+.section-heading--light {
+  color: #ffffff;
+}
+
+.tecnica-intro {
+  color: var(--tec-gray);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 860px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.tecnica-intro--light {
+  color: #94a3b8;
+}
+
+/* ── Tables ── */
+.tecnica-table-scroll {
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  max-width: 1100px;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tecnica-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 720px;
+}
+
+.tecnica-table th {
+  background: var(--tec-dark);
+  color: #ffffff;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.tecnica-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--tec-gray);
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.tecnica-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.tecnica-table__strong {
+  font-weight: 700;
+  color: var(--tec-green-dark);
+  white-space: nowrap;
+}
+
+/* ── Cards ── */
+.tecnica-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tecnica-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.tecnica-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--tec-dark);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--tec-green);
+}
+
+.tecnica-card__text {
+  color: var(--tec-gray);
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.tecnica-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tecnica-chip {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid var(--tec-green);
+  color: #166534;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+.tecnica-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--tec-gray);
+  line-height: 1.7;
+}
+
+.tecnica-list li {
+  margin-bottom: 8px;
+}
+
+.tecnica-list--light {
+  color: #cbd5e1;
+}
+
+/* ── Cómo medir ── */
+.tecnica-measure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tecnica-measure-card {
+  background: var(--tec-gray-light);
+  border-radius: 14px;
+  padding: 28px 24px;
+  border-left: 4px solid var(--tec-green);
+}
+
+.tecnica-measure-card__tag {
+  display: inline-block;
+  background: var(--tec-green);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.tecnica-measure-card p {
+  color: var(--tec-gray);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Venting ── */
+.tecnica-venting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tecnica-venting-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tecnica-venting-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.tecnica-venting-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--tec-green-dark);
+  margin: 0 0 10px;
+}
+
+.tecnica-venting-card p {
+  color: var(--tec-gray);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ── Cálculos ── */
+.tecnica-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tecnica-calc-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 32px 28px;
+}
+
+.tecnica-calc-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px;
+}
+
+.tecnica-formula {
+  background: rgba(76, 175, 80, 0.15);
+  border: 1px solid var(--tec-green);
+  border-radius: 10px;
+  padding: 18px 20px;
+  color: #a7f3a0;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tecnica-step {
+  margin-bottom: 18px;
+}
+
+.tecnica-step h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tec-green);
+  margin: 0 0 6px;
+}
+
+.tecnica-step p {
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.tecnica-calc-note {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 16px 0 0;
+}
+
+/* ── Importante ── */
+.tecnica-important {
+  background: #ffffff;
+  padding: 0 20px 80px;
+}
+
+.tecnica-important__box {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid #fcd34d;
+  border-radius: 14px;
+  padding: 28px 32px;
+}
+
+.tecnica-important__box svg {
+  color: #d97706;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tecnica-important__box strong {
+  display: block;
+  color: #92400e;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.tecnica-important__box p {
+  color: #78350f;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .tecnica-hero__content h1 {
+    font-size: 2.1rem;
+  }
+
+  .tecnica-hero__content p {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+  }
+
+  .tecnica-section {
+    padding: 56px 16px;
+  }
+
+  .tecnica-important__box {
+    flex-direction: column;
+    padding: 24px;
+  }
+}
